@@ -1,0 +1,84 @@
+<!-- <form #form="ngForm" (submit)="sayHi()">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input [(ngModel)]="email" name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+
+<!-- export interface User {
+  userId: string;
+  firstName: string;
+  lastName: string;
+  age: number;
+  gender: string;
+  role: string;
+  yearsOfExperience: number;
+} -->
+
+<form (submit)="myFunction()" validate>
+
+  <!-- first Name -->
+  <div class="mb-3">
+    <label for="firstName" class="form-label">First Name</label>
+    <input required [(ngModel)]="user.firstName" name="firstName" type="text" class="form-control" id="firstName">
+  </div>
+
+  <!-- last name -->
+  <div class="mb-3">
+    <label for="lastName" class="form-label">Last Name</label>
+    <input required  [(ngModel)]="user.lastName" name="lastName" type="text" class="form-control" id="lastName">
+  </div>
+
+  <!-- age -->
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input required  [(ngModel)]="user.age" name="age" type="number" class="form-control" id="age">
+  </div>
+
+  <!-- gender radio buttons -->
+  Gender:
+  <div class="container row">
+    <div class="form-check col">
+      <input required [(ngModel)]="user.gender" class="form-check-input"  type="radio" name="genderRadio" id="radioMale" value="male">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Male
+      </label>
+    </div>
+    <div class="form-check col">
+      <input required [(ngModel)]="user.gender" class="form-check-input" type="radio" name="genderRadio" id="radioFemale" value="female">
+      <label class="form-check-label" for="flexRadioDefault2">
+        Female
+      </label>
+    </div>
+  </div>
+
+  <!-- role - drop down - front end back end -->
+  Role:
+  <div class="container row">
+    <div class="form-check col">
+      <input required [(ngModel)]="user.role" value="frontEndDev" class="form-check-input" type="radio" name="roleRadio" id="radioFrontEnd">
+      <label class="form-check-label" for="flexRadioDefault1">
+        Front End
+      </label>
+    </div>
+    <div class="form-check col">
+      <input required [(ngModel)]="user.role" value="backEndDev" class="form-check-input" type="radio" name="roleRadio" id="radioBackEnd" >
+      <label class="form-check-label" for="flexRadioDefault2">
+        Back End
+      </label>
+    </div>
+  </div>
+
+
+  <!-- years of experience -->
+  Years of Experience
+  <select [(ngModel)]="user.yearsOfExperience" name="yearsOfExperience" class="form-select" aria-label="Default select example">
+    <!-- <option selected>Open this select menu</option> -->
+    <option value="1">0-2 Years</option>
+    <option value="2">2-5 Years</option>
+    <option value="3">>5 years</option>
+  </select>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,18 @@
+<!-- <ul *ngFor="let user of users" class="list-group">
+  <li class="list-group-item">{{user}}</li>
+</ul> -->
+
+<!-- <ul *ngFor="let user of usersList " class="list-group">
+  <li class="list-group-item">
+    <i class="bi bi-person"></i>
+    {{user.firstName}} {{user.lastName}} Age:{{user.age}}</li>
+</ul> -->
+
+<ag-grid-angular
+    style="width: 500px; height: 500px;"
+    class="ag-theme-alpine"
+    [rowData]="agData"
+    [columnDefs]="agColumnsDef"
+    [frameworkComponents] = "frameworkComponents"
+>
+</ag-grid-angular>
